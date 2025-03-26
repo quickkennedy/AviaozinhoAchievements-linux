@@ -1,0 +1,4 @@
+build/
+vcpkg/
+libs_universal/
+**/xcuserdata/
