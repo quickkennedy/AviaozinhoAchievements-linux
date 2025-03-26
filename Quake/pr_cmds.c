@@ -1872,7 +1872,7 @@ void PR_spawnfunc_misc_model(edict_t *self)
 static void PF_unlockachievement(void) {
 	const char* name = G_STRING(OFS_PARM0);
 	Pipe_Write("unlock_achievement %s", name);
-	Con_Printf("Unlocking achievement %s\n", name);
+	//Con_Printf("Unlocking achievement %s\n", name);
 }
 
 static void PF_updatestat(void) {
