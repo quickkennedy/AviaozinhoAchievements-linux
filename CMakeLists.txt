@@ -70,23 +70,16 @@ ELSE()
 	MESSAGE(WARNING "no opusfile support.")	
 ENDIF()
 
-PKG_SEARCH_MODULE(VORBIS vorbis)
 PKG_SEARCH_MODULE(VORBISFILE vorbisfile)
 IF(VORBISFILE_FOUND)
-	IF(VORBIS_FOUND)
-		SET(QS_LIBS ${QS_LIBS} ${VORBIS_LIBRARIES})
-	ELSE()
-		MESSAGE(WARNING "libvorbisfile found, but libvorbis is missing! This may break linking.")
-	ENDIF()
-
 	SET(QS_LIBS ${QS_LIBS} ${VORBISFILE_LIBRARIES})
 	SET(QS_FILES ${QS_FILES} Quake/snd_vorbis.c)
 	SET(QS_DEFS ${QS_DEFS};USE_CODEC_VORBIS)
-	MESSAGE("Found libvorbisfile support.")
+	MESSAGE("Found libvorbisfile support.")	
 ELSE()
-	MESSAGE(WARNING "no vorbisfile support.")
+	# VORBIS_USE_TREMOR ?
+	MESSAGE(WARNING "no vorbisfile support.")	
 ENDIF()
-
 
 PKG_SEARCH_MODULE(MIKMOD libmikmod)
 IF(MIKMOD_FOUND)
