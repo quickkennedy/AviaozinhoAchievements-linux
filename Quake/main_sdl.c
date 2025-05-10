@@ -43,8 +43,6 @@ void Host_Reconnect_Con_f (void);
 
 static Uint32 lastTime = 0; // woods #idle
 
-#include "pipe.h"
-
 static void Sys_AtExit (void)
 {
 	SDL_Quit();
@@ -122,12 +120,6 @@ int main(int argc, char *argv[])
 
 	Sys_Printf("Host_Init\n");
 	Host_Init();
-	if (!Pipe_ConnectToExisting()) {
-		Con_Printf("Couldn't connect to the launcher\n");
-	}
-	else {
-		Con_Printf("Game connected to the launcher\n");
-	}
 
 	oldtime = Sys_DoubleTime();
 	if (isDedicated)
