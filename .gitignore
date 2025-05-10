@@ -9,3 +9,8 @@ Windows/VisualStudio/UpgradeLog.htm
 
 # macOS
 .DS_Store
+
+# linux build files
+*.o
+*.d
+Quake/quakespasm
